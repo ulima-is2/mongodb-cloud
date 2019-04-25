@@ -5,8 +5,8 @@ export let ObjectId = mongoose.Schema.Types.ObjectId
 export let Mixed = mongoose.Schema.Types.Mixed
 
 export interface IProduct extends mongoose.Document {
-    name: string,
-    quantity: Number
+    name: string;
+    quantity: Number;
 }
 
 export const ProductSchema = new mongoose.Schema({

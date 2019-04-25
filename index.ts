@@ -7,18 +7,26 @@ const db: string = "mongodb://127.0.0.1:27017/app?gssapiServiceName=mongodb&retr
 connect({db})
 
 let main = () => {
-    var product = new ProductDAO({
-        name: "test 2",
-        quantity: 2
+    let product = new ProductDAO({
+        name: "test 4",
+        quantity: 4
     });
 
     product.save((err: any) => {
-        console.log(err);
         if (err) {
             console.log(err);
         } else {
-            console.log(product);
-            
+            console.log(product);            
+        }
+    });
+
+    let products = ProductDAO.find((err: any, products: any) => {
+        if (err) {
+            console.log(err);
+        } else {
+            products.forEach( ( element : any )=> {
+                console.log(element.name); 
+            });                       
         }
     });
 
