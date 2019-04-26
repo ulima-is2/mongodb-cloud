@@ -59,3 +59,5 @@ db.products.find()
   - https://medium.com/@tomanagle/strongly-typed-models-with-mongoose-and-typescript-7bc2f7197722
 - commands
   - https://dzone.com/articles/top-10-most-common-commands-for-beginners
+- mongoose queries
+  - https://mongoosejs.com/docs/api.html#model_Model.find  
