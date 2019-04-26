@@ -51,7 +51,7 @@ use app
 show collections
 db.products.count()
 db.products.find()
-
+````
 
 # reference
 - examples
