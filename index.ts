@@ -8,8 +8,8 @@ connect({db})
 
 let main = () => {
     let product = new ProductDAO({
-        name: "test 4",
-        quantity: 4
+        name: "test 6",
+        quantity: 6
     });
 
     product.save((err: any) => {
@@ -20,15 +20,16 @@ let main = () => {
         }
     });
 
-    let products = ProductDAO.find((err: any, products: any) => {
+    let products = ProductDAO.find({ quantity: { $gt: 5 }},
+        (err: any, products: any) => {
         if (err) {
             console.log(err);
         } else {
             products.forEach( ( element : any )=> {
-                console.log(element.name); 
+                console.log(element.name + ":" + element.quantity); 
             });                       
         }
-    });
-
+        process.exit(1);
+    });    
 }
 main()
